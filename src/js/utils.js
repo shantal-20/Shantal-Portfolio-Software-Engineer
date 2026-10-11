@@ -9,3 +9,7 @@ function formatMonthYear(value) {
 function renderBadges(items) {
   return items.map((item) => `<span class="badge">${item}</span>`).join("");
 }
+
+function renderLists(lists) {
+  return lists.map((list) => `<li class="card-list">${list}</li>`).join("");
+}

@@ -30,30 +30,57 @@ let certificates = [
     ],
     dateIssued: "2026-10",
   },
+  {
+    image: "src/assets/images/portfolio/certificate/OperatingSystemSupport.png",
+    name: "Operating System Support",
+    platform: "Cisco Networking Academy",
+    desc: "This certification validates skills in troubleshooting Windows, macOS, and mobile operating systems, with emphasis on enhancing customer service in technical support environments.",
+    skill: ["Windows Troubleshooting", "macOS Support", "Customer Service"],
+    dateIssued: "2025-11",
+  },
+  {
+    image: "src/assets/images/portfolio/certificate/IOT.png",
+    name: "Exploring Internet of Things with Cisco Packet Tracer",
+    platform: "Cisco Networking Academy",
+    desc: "This certification demonstrates the ability to add and configure IoT devices in Cisco Packet Tracer, enabling the setup of smart home networks and showcasing applied networking skills.",
+    skill: ["Network Simulation", "Cisco Packet Tracer", "IoT"],
+    dateIssued: "2025-11",
+  },
+  {
+    image: "src/assets/images/portfolio/certificate/TOPCIT.png",
+    name: "13th Test of Practical Competency in ICT (TOPCIT) Philippines",
+    platform: "BULACAN AGRICULTURAL STATE COLLEGE [Global]",
+    desc: "This certification evaluates practical ICT competencies across software development, database management, networking, and IT problem‑solving. Achieving Level 2 demonstrates strong applied skills in programming, system design, and technical communication",
+    skill: [
+      "System Architecture",
+      "Software",
+      "Data",
+      "Information Security",
+      "Tech. Comm. & PM",
+      "IT Business & Ethics",
+      "Competencies",
+    ],
+    dateIssued: "2025-12",
+  },
 ];
 
 function renderCertificate() {
   const container = document.getElementById("certificate");
 
   certificates.forEach((cert) => {
-    let [year, month] = cert.dateIssued.split("-");
-    let dateIssued = new Date(year, month - 1).toLocaleString("en-US", {
-      month: "long",
-      year: "numeric",
-    });
+    const dateIssued = formatMonthYear(cert.dateIssued);
 
-    let skillList = "";
-    cert.skill.forEach((s) => {
-      skillList += `<span class="badge">${s}</span>`;
-    });
+    let skillList = renderBadges(cert.skill);
 
     let card = `
         <div class="card certificate" id="certificate-card">
+              <div class="certificate-image-container">
                 <img
                   src="${cert.image}"
                   class="card-img-top"
                   alt="${cert.name}"
                 />
+              </div>
 
                 <div class="card-body d-flex flex-column">
                   <div>

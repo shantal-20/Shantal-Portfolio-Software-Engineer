@@ -380,19 +380,20 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card-footer {
+  padding: 16px 28px;
+  border-top: 1px solid #f1f5f9;
+  border-radius: 0 0 16px 16px;
+  background: #fafbfc;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 #project-card {
   flex: 0 0 calc(33.333% - 1.75rem);
   max-width: calc(33.333% - 1.75rem);
   --bs-card-border-width: 0;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
-
-#certificate-card {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -477,14 +478,25 @@
   line-height: 1;
 }
 
-.card-footer {
-  padding: 16px 28px;
-  border-top: 1px solid #f1f5f9;
-  border-radius: 0 0 16px 16px;
-  background: #fafbfc;
-  color: #64748b;
-  font-size: 0.8rem;
-  font-weight: 600;
+#certificate-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#certificate-card .certificate-image-container {
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#certificate-card .certificate-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 576px) {

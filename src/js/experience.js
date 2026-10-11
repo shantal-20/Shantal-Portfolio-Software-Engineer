@@ -10,7 +10,7 @@ const experiences = [
     ],
     startDate: "2026-02",
     endDate: "2026-05",
-    skills: [
+    skill: [
       "WordPress",
       "JavaScript",
       "Canva",
@@ -24,39 +24,20 @@ function renderExperience() {
   const container = document.getElementById("experience");
 
   experiences.forEach((exp) => {
-    let [startYear, startMonth] = exp.startDate.split("-");
-    let startDate = new Date(startYear, startMonth - 1).toLocaleString(
-      "default",
-      {
-        month: "long",
-        year: "numeric",
-      },
-    );
+    const startDate = formatMonthYear(exp.startDate);
 
     let endDate;
     if (exp.endDate.toLowerCase() === "present") {
       endDate = "Present";
     } else {
-      let [endYear, endMonth] = exp.endDate.split("-");
-      endDate = new Date(endYear, endMonth - 1).toLocaleString("en-US", {
-        month: "long",
-        year: "numeric",
-      });
+      endDate = formatMonthYear(exp.endDate);
     }
 
-    let duration = `${startDate} - ${endDate}`;
+    const duration = `${startDate} - ${endDate}`;
 
-    let skillList = "";
-    exp.skills.forEach((skill) => {
-      skillList += `<span class="badge">${skill}</span>`;
-    });
+    let skillList = renderBadges(exp.skill);
 
-    let descList = "";
-    exp.description.forEach((desc) => {
-      descList += `<li class="card-list">
-                     ${desc}
-                    </li>`;
-    });
+    let descList = renderLists(exp.description);
 
     const card = `
             <div class="card experience" id="experience-card">
