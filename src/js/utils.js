@@ -7,9 +7,25 @@ function formatMonthYear(value) {
 }
 
 function renderBadges(items) {
-  return items.map((item) => `<span class="badge">${item}</span>`).join("");
+  const container = document.createDocumentFragment();
+
+  items.forEach((item) => {
+    const span = document.createElement("span");
+    span.classList.add("badge");
+    span.textContent = item;
+    container.appendChild(span);
+  });
+
+  return container;
 }
 
 function renderLists(lists) {
-  return lists.map((list) => `<li class="card-list">${list}</li>`).join("");
+  const container = document.createDocumentFragment();
+  lists.forEach((list) => {
+    const li = document.createElement("li");
+    li.classList.add("class-list");
+    li.textContent = list;
+    container.appendChild(li);
+  });
+  return container;
 }

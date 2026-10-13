@@ -390,7 +390,19 @@
   font-weight: 600;
 }
 
-#project-card {
+.portfolio-section .card-issuer {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.portfolio-section .card-description {
+  margin: 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.project-card {
   flex: 0 0 calc(33.333% - 1.75rem);
   max-width: calc(33.333% - 1.75rem);
   --bs-card-border-width: 0;
@@ -399,7 +411,17 @@
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-#project-card .button-container button {
+.project-card:hover {
+  box-shadow:
+    rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.project-card .btn {
   font-size: 14px;
 }
 
@@ -428,10 +450,6 @@
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
-#experience .card-text {
-  color: #64748b;
-}
-
 #experience .work-setup {
   position: absolute;
   top: 15px;
@@ -457,10 +475,6 @@
 #experience .card-description {
   list-style: none;
   padding-left: 1.5rem;
-  margin: 0;
-  color: #475569;
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
 
 #experience .card-description li {
@@ -478,7 +492,7 @@
   line-height: 1;
 }
 
-#certificate-card {
+.certificate-card {
   display: flex;
   flex-wrap: wrap;
   width: 45%;
@@ -487,13 +501,13 @@
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-#certificate-card .certificate-image-container {
+.certificate-card .certificate-image-container {
   height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-#certificate-card .certificate-image-container img {
+.certificate-card .certificate-image-container img {
   width: 100%;
   height: auto;
   display: block;

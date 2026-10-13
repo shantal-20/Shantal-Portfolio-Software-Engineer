@@ -3,7 +3,7 @@ const experiences = [
     position: "Intern - WordPress Developer",
     company: "VastResult Inc.",
     workSetup: "Hybrid",
-    description: [
+    desc: [
       "Developed and maintained company web pages for security and infrastructure services",
       "Enhanced UI layout and readability by optimizing banners, buttons, and typography",
       "Created SEO-optimized content and graphics to improve search visibility",
@@ -37,30 +37,61 @@ function renderExperience() {
 
     let skillList = renderBadges(exp.skill);
 
-    let descList = renderLists(exp.description);
+    let descList = renderLists(exp.desc);
 
-    const card = `
-            <div class="card experience" id="experience-card">
-                <div class="card-body">
-                  <h5 class="card-title mb-1 fw-bold">${exp.position}</h5>
-                  <p class="card-text">${exp.company}.</p>
-                  <span class="work-setup badge ${exp.workSetup.toLowerCase()} rounded-5 pad-5"
-                    >${exp.workSetup}</span
-                  >
-                  <ul class="card-description pb-3">
-                    ${descList}
-                  </ul>
+    //Card Wrapper
+    const card = document.createElement("div");
+    card.classList.add("experience", "card", "experience-card");
 
-                  <div class="badge-container d-flex flex-wrap gap-2">
-                    ${skillList}
-                  </div>
+    //Card Body
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
 
-                </div>
-                <div class="card-footer">${duration}</div>
-            </div>
-      `;
+    const cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-title", "mb-1", "fw-bold");
+    cardTitle.textContent = exp.position;
 
-    container.innerHTML += card;
+    const cardText = document.createElement("p");
+    cardText.classList.add("card-text", "card-issuer");
+    cardText.textContent = exp.company;
+
+    const badge = document.createElement("span");
+    badge.classList.add(
+      "work-setup",
+      "badge",
+      `${exp.workSetup.toLowerCase()}`,
+      "rounded-5",
+      "pad-5",
+    );
+    badge.textContent = exp.workSetup;
+
+    const cardDescription = document.createElement("ul");
+    cardDescription.classList.add("card-description", "pb-3");
+
+    const badgeContainer = document.createElement("div");
+    badgeContainer.classList.add(
+      "badge-container",
+      "d-flex",
+      "flex-wrap",
+      "gap-2",
+    );
+
+    //Card Footer
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer");
+    cardFooter.textContent = duration;
+
+    badgeContainer.appendChild(skillList);
+    cardDescription.appendChild(descList);
+    cardBody.append(
+      cardTitle,
+      cardText,
+      badge,
+      cardDescription,
+      badgeContainer,
+    );
+    card.append(cardBody, cardFooter);
+    container.appendChild(card);
   });
 }
 

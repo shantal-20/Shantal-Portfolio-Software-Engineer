@@ -12,7 +12,7 @@ let certificates = [
       "Control Flow",
       "Exceptions",
     ],
-    dateIssued: "2026-06",
+    date: "2026-06",
   },
   {
     image: "src/assets/images/portfolio/certificate/JSEssential2.png",
@@ -28,7 +28,7 @@ let certificates = [
       "Object Method",
       "Prototypes",
     ],
-    dateIssued: "2026-10",
+    date: "2026-10",
   },
   {
     image: "src/assets/images/portfolio/certificate/OperatingSystemSupport.png",
@@ -36,7 +36,7 @@ let certificates = [
     platform: "Cisco Networking Academy",
     desc: "This certification validates skills in troubleshooting Windows, macOS, and mobile operating systems, with emphasis on enhancing customer service in technical support environments.",
     skill: ["Windows Troubleshooting", "macOS Support", "Customer Service"],
-    dateIssued: "2025-11",
+    date: "2025-11",
   },
   {
     image: "src/assets/images/portfolio/certificate/IOT.png",
@@ -44,7 +44,7 @@ let certificates = [
     platform: "Cisco Networking Academy",
     desc: "This certification demonstrates the ability to add and configure IoT devices in Cisco Packet Tracer, enabling the setup of smart home networks and showcasing applied networking skills.",
     skill: ["Network Simulation", "Cisco Packet Tracer", "IoT"],
-    dateIssued: "2025-11",
+    date: "2025-11",
   },
   {
     image: "src/assets/images/portfolio/certificate/TOPCIT.png",
@@ -60,46 +60,88 @@ let certificates = [
       "IT Business & Ethics",
       "Competencies",
     ],
-    dateIssued: "2025-12",
+    date: "2025-12",
   },
 ];
 
 function renderCertificate() {
   const container = document.getElementById("certificate");
 
-  certificates.forEach((cert) => {
-    const dateIssued = formatMonthYear(cert.dateIssued);
+  const sortedCertificates = [...certificates].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+
+  sortedCertificates.forEach((cert) => {
+    const date = formatMonthYear(cert.date);
 
     let skillList = renderBadges(cert.skill);
 
-    let card = `
-        <div class="card certificate" id="certificate-card">
-              <div class="certificate-image-container">
-                <img
-                  src="${cert.image}"
-                  class="card-img-top"
-                  alt="${cert.name}"
-                />
-              </div>
+    //Card Wrapper
+    const card = document.createElement("div");
+    card.classList.add("card", "certificate", "certificate-card");
 
-                <div class="card-body d-flex flex-column">
-                  <div>
-                    <h5 class="card-title fw-semibold fs-5">${cert.name}</h5>
-                    <p class="card-text fs-6 text-justify mt-3">${cert.desc}</p>
-                  </div>
-                  <div class="mt-auto">
-                    <div class="badge-container d-flex flex-wrap gap-1 mt-5" nstyle="width: 250px">
-                        ${skillList}
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer text-body-secondary">
-                Issued: ${dateIssued}
-            </div>
-        </div>
-    `;
+    //Card Image
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("certificate-image-container");
 
-    container.innerHTML += card;
+    const img = document.createElement("img");
+    img.src = cert.image;
+    img.alt = cert.name;
+    img.loading = "lazy";
+    img.classList.add("card-img-top");
+
+    //Card Body
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
+
+    //Card Upper part
+    const cardInfo = document.createElement("div");
+    cardInfo.classList.add("card-info-container");
+
+    const cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-title", "fw-semibold", "fs-5");
+    cardTitle.textContent = cert.name;
+
+    const cardText = document.createElement("p");
+    cardText.classList.add("card-text", "card-issuer");
+    cardText.textContent = cert.platform;
+
+    const cardDesc = document.createElement("p");
+    cardDesc.classList.add(
+      "card-text",
+      "card-description",
+      "fs-6",
+      "text-justify",
+      "mt-3",
+    );
+    cardDesc.textContent = cert.desc;
+
+    //Card Bottom part
+    const cardBottomContent = document.createElement("div");
+    cardBottomContent.classList.add("card-bottom-content", "mt-auto");
+
+    //Badge Container
+    const badgeContainer = document.createElement("div");
+    badgeContainer.classList.add(
+      "badge-container",
+      "d-flex",
+      "flex-wrap",
+      "gap-1",
+      "mt-5",
+    );
+
+    //Card Footer
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer", "text-body-secondary");
+    cardFooter.textContent = `Date Issued: ${date}`;
+
+    badgeContainer.appendChild(skillList);
+    cardBottomContent.appendChild(badgeContainer);
+    cardInfo.append(cardTitle, cardText, cardDesc);
+    cardBody.append(cardInfo, cardBottomContent);
+    imageContainer.appendChild(img);
+    card.append(imageContainer, cardBody, cardFooter);
+    container.appendChild(card);
   });
 }
 
