@@ -115,22 +115,17 @@
         <div
           class="hero-button-container d-flex justify-content-center gap-3 pt-3"
         >
-          <button
-            class="btn btn-primary fw-medium rounded"
-            id="view-projects-btn"
-            type="button"
+          <a href="#project" class="btn btn-primary" id="view-projects-btn"
+            ><i class="bi bi-folder2 me-1"></i> View Projects</a
           >
-            <i class="bi bi-folder2 me-1"></i> View Projects
-          </button>
-
-          <button
-            class="btn btn-warning fw-medium rounded"
-            id="download-resume-btn"
-            type="button"
+          <a
+            href="src/assets/files/Shantal Gregorio - Jr. Software Engineer.pdf"
+            class="btn btn-warning"
+            id="download-file-btn"
+            download
           >
-            <i class="bi bi-download me-1"></i>
-            Download CV
-          </button>
+            <i class="bi bi-download me-1"></i> Download CV</a
+          >
         </div>
       </section>
 
@@ -188,13 +183,13 @@
                 <span>Want to know more about my experience?</span>
 
                 <a
-                  href="assets/files/Shantal-Gregorio-Resume.pdf"
-                  class="resume-link link-underline-primary"
-                  id="download-resume"
-                  download
+                  href="src/assets/files/Shantal Gregorio - Jr. Software Engineer.pdf"
+                  class="btn btn-primary"
+                  id="download-file-btn"
+                  target="_blank"
                 >
-                  Download My CV <i class="bi bi-download me-2"></i>
-                </a>
+                  <i class="bi bi-download me-1"></i> Download CV</a
+                >
               </div>
 
               <div class="about-highlights d-flex gap-3 mt-4">
@@ -595,7 +590,9 @@
     <!-- View Projects Button -->
     <!-- <script>
       const viewButton = document.getElementById("view-projects-btn");
-      viewButton.addEventListener("click", () => {});
+      viewButton.addEventListener("click", () => {
+        console.log("Clicked");
+      });
     </script> -->
 
     <!-- Tech Stack Filter Script -->

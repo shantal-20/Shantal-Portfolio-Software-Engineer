@@ -91,7 +91,7 @@ function renderProjects() {
     viewButton.classList.add("btn", "btn-outline-primary");
     viewButton.href = proj.src;
     viewButton.target = "_blank";
-    viewButton.textContent = "View";
+    viewButton.textContent = "View Website";
     viewButton.rel = "noopener noreferrer";
 
     const viewIcon = document.createElement("i");
@@ -113,7 +113,7 @@ function renderProjects() {
     cardFooter.classList.add("card-footer", "text-body-secondary");
     cardFooter.textContent = `Last Updated: ${date}`;
 
-    buttonContainer.append(viewButton, showDetailButton);
+    buttonContainer.appendChild(viewButton);
     badgeContainer.appendChild(programmingList);
     cardBottomContent.append(badgeContainer, buttonContainer);
     cardInfo.append(cardTitle, cardText);
