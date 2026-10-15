@@ -78,7 +78,14 @@ function renderCertificate() {
 
     //Card Wrapper
     const card = document.createElement("div");
-    card.classList.add("card", "certificate", "certificate-card");
+    card.classList.add(
+      "card",
+      "certificate",
+      "certificate-card",
+      "d-flex",
+      "flex-wrap",
+      "w-50",
+    );
 
     //Card Image
     const imageContainer = document.createElement("div");
@@ -88,7 +95,7 @@ function renderCertificate() {
     img.src = cert.image;
     img.alt = cert.name;
     img.loading = "lazy";
-    img.classList.add("card-img-top");
+    img.classList.add("card-img-top", "d-block", "w-100", "h-auto");
 
     //Card Body
     const cardBody = document.createElement("div");

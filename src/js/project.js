@@ -75,7 +75,7 @@ function renderProjects() {
       "gap-1",
       "mt-5",
     );
-    badgeContainer.style.width = "250px";
+    badgeContainer.style.width = "275px";
 
     //Button Container
     const buttonContainer = document.createElement("div");

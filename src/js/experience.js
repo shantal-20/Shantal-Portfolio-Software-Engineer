@@ -41,7 +41,7 @@ function renderExperience() {
 
     //Card Wrapper
     const card = document.createElement("div");
-    card.classList.add("experience", "card", "experience-card");
+    card.classList.add("experience", "card", "experience-card", "w-100");
 
     //Card Body
     const cardBody = document.createElement("div");
@@ -66,7 +66,12 @@ function renderExperience() {
     badge.textContent = exp.workSetup;
 
     const cardDescription = document.createElement("ul");
-    cardDescription.classList.add("card-description", "pb-3");
+    cardDescription.classList.add(
+      "card-description",
+      "pb-3",
+      "list-unstyled",
+      "ps-4",
+    );
 
     const badgeContainer = document.createElement("div");
     badgeContainer.classList.add(
@@ -74,6 +79,7 @@ function renderExperience() {
       "d-flex",
       "flex-wrap",
       "gap-2",
+      "w-75",
     );
 
     //Card Footer

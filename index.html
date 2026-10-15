@@ -20,41 +20,54 @@
 
   <body>
     <header>
-      <div class="nav-bar-container fixed-top">
-        <nav class="nav-bar p-2">
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#hero"
-                >Home</a
-              >
-            </li>
+      <nav class="navbar navbar-expand-md fixed-top p-2">
+        <div class="container">
+          <!-- <a class="navbar-brand fw-bold" href="#hero"> Shantal </a> -->
 
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
+          <!-- Mobile Toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bi bi-list"></i>
+          </button>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#tech-stack">Stack</a>
-            </li>
+          <!-- Navbar Links -->
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarMenu"
+          >
+            <ul class="navbar-nav align-items-md-center gap-md-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="#hero">Home</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
 
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#project-section">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience-section">Experience</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="btn btn-danger contact-me-btn text-light" href="#">
-                <i class="bi bi-telephone me-2"></i>Contact Me
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+              <li class="nav-item">
+                <a class="nav-link" href="#tech-stack">Stack</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+
+              <li class="nav-item mt-2 mt-md-0">
+                <a class="btn btn-primary text-light" href="#contact">
+                  <i class="bi bi-telephone me-2"></i>Contact Me
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -119,7 +132,7 @@
             ><i class="bi bi-folder2 me-1"></i> View Projects</a
           >
           <a
-            href="src/assets/files/Shantal Gregorio - Jr. Software Engineer.pdf"
+            href="src/assets/files/resume.pdf"
             class="btn btn-warning"
             id="download-file-btn"
             download
@@ -130,44 +143,37 @@
       </section>
 
       <!-- About Me Section: Shows a short introduction and my image -->
-      <section id="about" class="about m-auto p-5-5">
+      <section id="about" class="about m-auto p-4-5">
         <div class="container">
-          <div class="section-heading text-center mb-5">
+          <div class="section-heading text-center mb-5 gap-2">
             <span class="section-label">About me</span>
             <h2 class="section-title mt-1">Get to Know Who I Am</h2>
           </div>
 
           <div
-            class="about-content justify-content-center align-items-center align-content-evenly"
+            class="about-content d-flex gap-5 justify-content-center align-items-center align-content-evenly"
           >
-            <div class="about-description d-flex flex-column">
+            <div class="about-description d-flex flex-column gap-1">
               <p class="about-text">
                 I am a passionate fresh graduate specializing in
                 <strong>backend development</strong>, with hands-on experience
                 in <strong>PHP, MySQL, and JavaScript</strong>. I am currently
                 exploring modern frameworks such as <em>Laravel</em> to expand
                 my skills, deliver more scalable solutions, and learn the proper
-                structure in writing <strong>RESTful APIs</strong>.
+                structure in writing <strong>RESTful APIs</strong>. I also use
+                AI tools to assist with coding, debugging, and productivity.
+                Outside programming, I enjoy watching dramas, gaming, and
+                exploring new ideas.
               </p>
 
               <p class="about-text">
                 During my internship at <strong>VastResult Inc.</strong>, I
-                developed skills in
-                <strong>SEO keyword optimization</strong> and gained experience
-                in building <strong>business websites</strong>. I also
-                contributed to <strong>content creation</strong> and
-                <strong>graphic design</strong> using tools such as
-                <em>WordPress</em> and <em>Canva</em>, ensuring that the site
-                effectively showcased products and services. Prior to that, I
-                worked with my groupmates on our
-                <strong>capstone project, Mamyr</strong> — an event management
-                system — where I served as <strong>backend developer</strong>. I
-                implemented <strong>CRUD functionality</strong>, built
-                <strong>API‑like endpoints</strong>, and added
-                <strong>email notifications</strong> via <em>PHPMailer</em>,
-                while using <em>JavaScript</em> for dynamic updates (e.g., when
-                users cancel a reservation or submit a review, changes are
-                instantly shown without refreshing the page).
+                gained experience in SEO optimization, business website
+                development, content creation, and graphic design using
+                WordPress and Canva. For my capstone project, Mamyr, an event
+                management system, I developed CRUD functionality, API-like
+                endpoints, and email notifications using PHPMailer, along with
+                JavaScript-powered dynamic updates.
               </p>
 
               <p class="about-text">
@@ -179,33 +185,44 @@
                 to create better web applications.
               </p>
 
-              <div class="about-actions">
-                <span>Want to know more about my experience?</span>
+              <div class="about-actions mt-3 mb-3">
+                <span class="me-3">Want to know more about my experience?</span>
 
                 <a
-                  href="src/assets/files/Shantal Gregorio - Jr. Software Engineer.pdf"
+                  href="src/assets/files/resume.pdf"
                   class="btn btn-primary"
                   id="download-file-btn"
                   target="_blank"
                 >
                   <i class="bi bi-download me-1"></i> Download CV</a
                 >
+
+                <a
+                  href="src/assets/files/resume.pdf"
+                  class="link-offset-1 d-none"
+                  id="download-file-link"
+                  target="_blank"
+                >
+                  Download CV</a
+                >
               </div>
 
               <div class="about-highlights d-flex gap-3 mt-4">
-                <div class="highlight-card skills">
-                  <p class="label">Skills Highlight:</p>
-                  <div class="skills d-flex gap-2">
-                    <span class="badge">PHP</span>
-                    <span class="badge">MySQL</span>
-                    <span class="badge">JavaScript</span>
-                    <span class="badge">Willingness to Learn</span>
+                <div class="highlight-card skills p-3 rounded-2">
+                  <p class="label fw-semibold">Skills Highlight:</p>
+                  <div
+                    class="badge-container d-flex flex-wrap align-items-center gap-2"
+                  >
+                    <span class="badge p-2">PHP</span>
+                    <span class="badge p-2">MySQL</span>
+                    <span class="badge p-2">JavaScript</span>
+                    <span class="badge p-2">Teachable</span>
                   </div>
                 </div>
 
-                <div class="highlight-card availability">
-                  <p class="label">Availability:</p>
-                  <span
+                <div class="highlight-card availability p-3 rounded-2">
+                  <p class="label fw-semibold">Availability:</p>
+                  <span class="availability-badge"
                     ><i class="bi bi-circle-fill text-success me-2"></i>Open for
                     opportunities</span
                   >
@@ -213,50 +230,66 @@
               </div>
             </div>
 
-            <div class="profile-card">
+            <div class="profile-card d-flex flex-column">
               <img
                 src="src/assets/images/Shantal 2x2.jpg"
                 alt="Shantal I. Gregorio"
-                class="profile-image"
+                class="profile-image d-block m-0 p-0 rounded-0 flex-shrink-0"
               />
 
-              <div class="profile-details p-3">
+              <div class="profile-details w-100 p-3 rounded-0">
                 <div class="profile-detail">
-                  <span class="profile-label">
-                    <i class="bi bi-person icon-name"></i>
+                  <span
+                    class="profile-label d-flex align-items-center gap-2 fw-medium"
+                  >
+                    <i class="bi bi-person fs-6 flex-shrink-0 icon-name"></i>
                     Name
                   </span>
 
-                  <span class="profile-value">Shantal I. Gregorio </span>
+                  <span class="profile-value d-block fw-medium lh-base"
+                    >Shantal I. Gregorio
+                  </span>
                 </div>
 
                 <div class="profile-detail">
-                  <span class="profile-label">
-                    <i class="bi bi-mortarboard icon-education"></i>
+                  <span
+                    class="profile-label d-flex align-items-center gap-2 fw-medium"
+                  >
+                    <i
+                      class="bi bi-mortarboard fs-6 flex-shrink-0 icon-education"
+                    ></i>
                     Education
                   </span>
 
-                  <span class="profile-value">
+                  <span class="profile-value d-block fw-medium lh-base">
                     BS in Information Technology, Cum Laude (2026)</span
                   >
                 </div>
 
                 <div class="profile-detail">
-                  <span class="profile-label">
-                    <i class="bi bi-telephone icon-contact-info"></i>
+                  <span
+                    class="profile-label d-flex align-items-center gap-2 fw-medium"
+                  >
+                    <i
+                      class="bi bi-telephone fs-6 flex-shrink-0 icon-contact-info"
+                    ></i>
                     Contact Number
                   </span>
 
-                  <span class="profile-value"> +63 920 461 9437 </span>
+                  <span class="profile-value d-block fw-medium lh-base">
+                    +63 920 461 9437
+                  </span>
                 </div>
 
                 <div class="profile-detail">
-                  <span class="profile-label">
-                    <i class="bi bi-envelope icon-email"></i>
+                  <span
+                    class="profile-label d-flex align-items-center gap-2 fw-medium"
+                  >
+                    <i class="bi bi-envelope fs-6 flex-shrink-0 icon-email"></i>
                     Email
                   </span>
 
-                  <span class="profile-value">
+                  <span class="profile-value d-block fw-medium lh-base">
                     shantalgregorio.work@gmail.com
                   </span>
                 </div>
@@ -267,9 +300,9 @@
       </section>
 
       <!-- Tech Stack Section: Shows different tools/technologies I used -->
-      <section id="tech-stack" class="tech-stack p-5-5">
+      <section id="tech-stack" class="tech-stack p-4-5">
         <div class="container">
-          <div class="section-heading text-center mb-5">
+          <div class="section-heading text-center mb-5 gap-2">
             <span class="section-label">Tech Stack</span>
             <h2 class="section-title">Technologies I Use</h2>
           </div>
@@ -506,9 +539,9 @@
       </section>
 
       <!-- Portfolio Section: Showcase my certifications, projects and experiences -->
-      <section id="portfolio" class="portfolio p-5-5">
+      <section id="portfolio" class="portfolio p-4-5">
         <div class="container">
-          <div class="section-heading text-center mb-4">
+          <div class="section-heading text-center mb-5 gap-2">
             <span class="section-label">Portfolio Showcase</span>
             <h2 class="section-title">Steps Toward Growth</h2>
             <p class="section-desc">
@@ -541,7 +574,7 @@
             </button>
           </div>
 
-          <div class="portfolio-body p-5">
+          <div class="portfolio-body pt-5">
             <!-- Project Display -->
             <div class="portfolio-section" id="project"></div>
             <!-- Experience Display -->
@@ -586,14 +619,6 @@
         });
       });
     </script>
-
-    <!-- View Projects Button -->
-    <!-- <script>
-      const viewButton = document.getElementById("view-projects-btn");
-      viewButton.addEventListener("click", () => {
-        console.log("Clicked");
-      });
-    </script> -->
 
     <!-- Tech Stack Filter Script -->
     <script>

@@ -1,0 +1,519 @@
+/*  LAPTOPS AND SMALL DESKTOPS  */
+@media (max-width: 1200px) {
+  .p-5-5 {
+    padding: 4rem 3rem;
+  }
+
+  .about-content {
+    grid-template-columns: minmax(0, 1.7fr) minmax(250px, 1fr);
+    gap: 3rem;
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .profile-image {
+    width: 100%;
+  }
+
+  .project-card {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+
+  .certificate-card {
+    width: calc(50% - 1rem);
+  }
+}
+
+/*  TABLETS AND SMALLER LAPTOPS  */
+@media (max-width: 991.98px) {
+  .p-5-5 {
+    padding: 4rem 2rem;
+  }
+
+  /* Navbar */
+  .nav-bar-container {
+    min-height: 60px;
+  }
+
+  .nav-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-bar .nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start !important;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .nav-bar .nav-link,
+  .nav-bar .contact-me-btn {
+    white-space: nowrap;
+    margin: 0.2rem 0.25rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 6rem 2rem 3rem !important;
+  }
+
+  .information-container .hero-title-badge {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    letter-spacing: 2px;
+  }
+
+  .information-container .hero-subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem) !important;
+  }
+
+  .information-container .hero-tagline {
+    max-width: 520px;
+  }
+
+  /* Section headings */
+  .section-heading {
+    height: auto;
+    min-height: 100px;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  /* About */
+  .about-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .about-description {
+    order: 2;
+  }
+
+  .profile-card {
+    order: 1;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .about-highlights {
+    flex-wrap: wrap;
+  }
+
+  .highlight-card {
+    flex: 1 1 240px;
+  }
+
+  /* Tech stack filters */
+  .skill-filters {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+  }
+
+  .skill-filters .skill-options {
+    flex: 1 1 130px;
+    width: auto !important;
+  }
+
+  .skill-list {
+    gap: 1rem;
+  }
+
+  .skill-card {
+    flex: 1 1 130px;
+    min-height: 130px;
+  }
+
+  /* Portfolio filters */
+  .portfolio-body {
+    padding: 2rem !important;
+  }
+
+  .portfolio-filters {
+    flex-wrap: wrap;
+  }
+
+  .portfolio-filters .portfolio-filter {
+    flex: 1 1 150px;
+  }
+
+  /* Experience */
+  #experience {
+    padding-left: 30px;
+  }
+
+  #experience .work-setup {
+    position: static;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}
+
+/* PHONES AND SMALL TABLETS */
+@media (max-width: 767.98px) {
+  .p-5-5 {
+    padding: 3.5rem 1.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 6rem 1.25rem 3rem !important;
+  }
+
+  .information-container {
+    width: 100%;
+  }
+
+  .information-container .name {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    overflow-wrap: anywhere;
+  }
+
+  .information-container .hero-title-badge {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .information-container .hero-subtitle {
+    font-size: 1.2rem !important;
+    line-height: 1.5;
+  }
+
+  .information-container .hero-tagline {
+    font-size: 0.95rem !important;
+    line-height: 1.7;
+  }
+
+  /* Social links */
+  .socials {
+    grid-template-columns: repeat(4, 44px);
+    gap: 0.75rem !important;
+  }
+
+  .social-links {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Hero buttons */
+  .hero-button-container {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.75rem !important;
+  }
+
+  .hero-button-container .btn {
+    flex: 1 1 160px;
+    min-width: 0;
+  }
+
+  /* Section headings */
+  .section-heading {
+    height: auto;
+    min-height: 0;
+    margin-bottom: 2rem !important;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+    line-height: 1.4;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* About */
+  .about-description .about-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .about-highlights {
+    flex-direction: column;
+  }
+
+  .highlight-card {
+    width: 100%;
+  }
+
+  .skills {
+    flex-wrap: wrap;
+  }
+
+  .skills span {
+    font-size: 0.8rem;
+    letter-spacing: 0;
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .profile-image {
+    width: 100%;
+  }
+
+  .profile-details {
+    padding: 1rem !important;
+  }
+
+  .profile-label {
+    font-size: 0.8rem;
+  }
+
+  .profile-value {
+    font-size: 0.9rem;
+  }
+
+  /* Tech stack */
+  .skill-filters .skill-options {
+    flex: 1 1 calc(33.333% - 0.6rem);
+    padding: 0.55rem 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .skill-category .skill-category-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .skill-list {
+    gap: 0.75rem;
+  }
+
+  .skill-card {
+    flex: 1 1 110px;
+    max-width: calc(50% - 0.5rem);
+    min-height: 120px;
+    padding: 0.85rem 0.5rem;
+  }
+
+  .skill-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-card .skill-name {
+    font-size: 0.85rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  /* Portfolio */
+  .portfolio-filters {
+    gap: 0.5rem !important;
+  }
+
+  .portfolio-filters .portfolio-filter {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-filters .portfolio-filter i {
+    font-size: 1.6rem !important;
+  }
+
+  .portfolio-body {
+    padding: 1rem 0 !important;
+  }
+
+  /* Project cards */
+  .project-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .project-card .btn {
+    font-size: 0.8rem;
+  }
+
+  /* Experience cards */
+  #experience {
+    padding: 0 0 0 1rem;
+    gap: 1.25rem;
+  }
+
+  #experience .card-body {
+    padding: 1rem;
+  }
+
+  #experience .card-title {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  #experience .card-description {
+    padding-left: 0.25rem;
+  }
+
+  #experience .card-description li {
+    align-items: flex-start;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  #experience .card-description li::before {
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  #experience .card-footer {
+    padding: 1rem;
+  }
+
+  /* Certificates */
+  .certificate-card {
+    width: 100%;
+  }
+
+  .certificate-card .certificate-image-container {
+    height: auto;
+    max-height: 280px;
+  }
+
+  .empty-certificate,
+  .empty-project {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #experience {
+    padding-left: 34px;
+    gap: 22px;
+  }
+
+  #experience #experience::before,
+  #experience #experience::after {
+    left: -22px;
+  }
+
+  #experience #experience::after {
+    width: 22px;
+  }
+
+  #experience .card-body {
+    padding: 20px;
+  }
+
+  #experience .card-title {
+    font-size: 1.05rem;
+  }
+
+  #experience .card-footer {
+    padding: 14px 20px;
+  }
+}
+
+/*  SMALL MOBILE PHONES */
+@media (max-width: 480px) {
+  .p-5-5 {
+    padding: 3rem 1rem;
+  }
+
+  /* Navbar */
+  .nav-bar .nav-link,
+  .nav-bar .contact-me-btn {
+    padding: 0.6rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  /* Hero */
+  .information-container .hero-title-badge {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+  }
+
+  .information-container .hero-subtitle {
+    font-size: 1.05rem !important;
+  }
+
+  .information-container .hero-tagline {
+    font-size: 0.875rem !important;
+  }
+
+  .hero-button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-button-container .btn {
+    width: 100%;
+    flex: auto;
+  }
+
+  /* Section headings */
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  /* Tech stack */
+  .skill-filters .skill-options {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  .skill-card {
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.4rem);
+  }
+
+  /* Portfolio filters */
+  .portfolio-filters .portfolio-filter {
+    font-size: 0.75rem;
+  }
+
+  /* Profile */
+  .profile-value {
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
