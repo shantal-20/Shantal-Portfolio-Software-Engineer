@@ -578,9 +578,132 @@
           </div>
         </div>
       </section>
+
+      <!-- Contact Me Section: Shows my contact informations -->
+      <section class="contact p-4-5" id="contact">
+        <div class="container">
+          <div class="section-heading text-center my-5 gap-2">
+            <span class="section-label">Get in touch</span>
+            <h2 class="section-title">Let's work together</h2>
+            <p class="section-desc">
+              Whether you have a project opportunity, want to collaborate, or
+              simply want to connect, I’m always open to chat. Drop me a message
+              and let’s make something happen.
+            </p>
+          </div>
+          <div
+            class="contact-section-body d-flex justify-content-center align-items-center w-100 gap-5 p-5"
+          >
+            <div class="contact-details d-flex flex-column gap-2">
+              <p class="contact-intro">
+                Feel free to contact anytime, I will try to get back to you
+                faster!
+              </p>
+
+              <div class="contact-item">
+                <i class="contact-icon bi bi-telephone me-2"></i>
+                <span class="contact-label">Call Me</span>
+
+                <div class="contact-value">
+                  <a href="tel:+639204619437" class="contact-link">
+                    +63 920 461 9437
+                  </a>
+
+                  <button
+                    type="button"
+                    id="copy-phone"
+                    class="copy-btn"
+                    aria-label="Copy phone number"
+                    title="Copy phone number"
+                  >
+                    <i class="bi bi-copy"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i class="contact-icon bi bi-envelope me-2"></i>
+                <span class="contact-label">Email</span>
+
+                <div class="contact-value">
+                  <a
+                    href="mailto:shantalgregorio.work@gmail.com"
+                    class="contact-link"
+                  >
+                    shantalgregorio.work@gmail.com
+                  </a>
+
+                  <button
+                    type="button"
+                    id="copy-email"
+                    class="copy-btn"
+                    aria-label="Copy email address"
+                    title="Copy email address"
+                  >
+                    <i class="bi bi-copy"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-actions">
+              <!-- Email Address -->
+              <a
+                href="mailto:shantalgregorio.work@gmail.com"
+                class="contact-btn btn btn-primary"
+              >
+                <i class="contact-icon bi bi-envelope me-2"></i>Email Me
+              </a>
+              <!-- LinkedIn Profile Link -->
+              <a
+                href="https://www.linkedin.com/in/shtnl/"
+                class="contact-btn btn btn-primary"
+                target="_blank"
+              >
+                <i class="contact-icon bi bi-linkedin me-2"></i>LinkedIn Profile
+              </a>
+              <!-- Viewing Resume -->
+              <a
+                href="src/assets/files/resume.pdf"
+                class="contact-btn btn btn-primary"
+                target="_blank"
+              >
+                <i class="contact-icon bi bi-file-earmark-text me-2"></i>Resumé
+              </a>
+              <!-- WhatsApp Link -->
+              <a
+                href="https://wa.me/09204619437"
+                class="contact-btn btn btn-outline-primary"
+                target="_blank"
+              >
+                <i class="contact-icon bi bi-whatsapp me-2"></i>Chat on WhatsApp
+              </a>
+              <!-- Github Repositories -->
+              <a
+                href="https://github.com/shantal-20"
+                class="contact-btn btn btn-outline-primary"
+                target="_blank"
+              >
+                <i class="contact-icon bi bi-github me-2"></i>
+                GitHub Projects
+              </a>
+              <!-- Capstone Project link -->
+              <a
+                href="https://mamyrresort128.com/"
+                class="contact-btn btn btn-outline-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-box-arrow-up-right me-2"></i>
+                Featured Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Bootstrap Link -->
+    <!-- Bootstrap JS Link -->
     <script src="src/js/bootstrap.bundle.min.js"></script>
 
     <!-- Navigation Script -->
@@ -668,6 +791,40 @@
       });
     </script>
 
+    <!-- Copy to clipboard function -->
+    <script>
+      document.querySelectorAll(".copy-btn").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const item = button.closest(".contact-item");
+          const value = item.querySelector(".contact-link").textContent.trim();
+          const icon = button.querySelector("i");
+
+          try {
+            await navigator.clipboard.writeText(value);
+
+            icon.className = "bi bi-check2";
+            button.title = "Copied!";
+            button.setAttribute("aria-label", "Copied!");
+
+            setTimeout(() => {
+              icon.className = "bi bi-copy";
+              button.title =
+                button.id === "copy-phone"
+                  ? "Copy phone number"
+                  : "Copy email address";
+              button.setAttribute(
+                "aria-label",
+                button.id === "copy-phone"
+                  ? "Copy phone number"
+                  : "Copy email address",
+              );
+            }, 1500);
+          } catch (error) {
+            console.error("Unable to copy text:", error);
+          }
+        });
+      });
+    </script>
     <!-- Displaying Portfolio Information Cards -->
     <script src="src/js/utils.js"></script>
     <script src="src/js/project.js"></script>

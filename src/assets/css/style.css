@@ -214,13 +214,19 @@ section {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .section-title {
   text-transform: capitalize;
   font-weight: 900;
   color: var(--primary-blue);
+}
+
+.section-desc {
+  margin-top: 0.5rem;
+  color: var(--text-dark);
+  max-width: 720px;
 }
 
 /* About Me Section*/
@@ -538,6 +544,110 @@ section {
 
 .certificate-card .certificate-image-container img {
   height: auto;
+}
+
+/* Contact Me */
+.contact {
+  background-image: url("../images/hero-section-background.png");
+}
+
+.contact-details {
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 50%;
+  max-width: 600px;
+  min-width: 0;
+}
+
+.contact-item {
+  border: 1px solid var(--border-light);
+  background-color: var(--background-light);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  min-width: 0;
+}
+
+.contact-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  min-width: 0;
+}
+
+.contact-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.contact-link:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.copy-btn {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  background: var(--background-white);
+  color: var(--primary-blue);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.copy-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem !important;
+  width: 50%;
+  max-width: 600px;
+  align-content: center;
+}
+
+.contact-actions .contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-actions .contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow-blue);
+}
+
+.contact-actions .contact-btn .contact-icon {
+  flex-shrink: 0;
 }
 
 /* Global */
