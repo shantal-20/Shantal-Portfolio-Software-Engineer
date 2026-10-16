@@ -87,14 +87,29 @@ section {
 }
 
 .navbar-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
   border: none;
-  font-size: 1.8rem;
+  background: transparent;
   color: var(--primary-blue);
-  box-shadow: none !important;
+  font-size: 1.8rem;
+  box-shadow: none;
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 3px;
+}
+
+.navbar-toggler:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.navbar-toggler i {
+  display: block;
+  line-height: 1;
 }
 
 .navbar .btn-primary {
@@ -661,41 +676,6 @@ section {
 @media (max-width: 776.99px) /* and (min-width: 610px) */ {
   .navbar {
     padding: 0.5rem 1rem;
-  }
-
-  .navbar-toggler {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.35rem 0.5rem;
-    font-size: 1.5rem;
-    color: var(--primary-blue);
-    border: none;
-    background: transparent;
-    box-shadow: none !important;
-  }
-
-  .navbar-toggler:focus {
-    outline: 2px solid var(--primary-blue);
-    outline-offset: 3px;
-    box-shadow: none !important;
-  }
-
-  .navbar-toggler-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .navbar-collapse {
-    padding-top: 0.75rem;
-  }
-
-  .navbar-nav {
-    gap: 0.25rem;
-  }
-
-  .navbar .nav-link {
-    padding: 0.65rem 0.5rem;
   }
 
   .information-container .name {
