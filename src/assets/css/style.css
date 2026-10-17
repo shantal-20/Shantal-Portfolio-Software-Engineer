@@ -49,7 +49,7 @@
 }
 
 .p-4-5 {
-  padding: 4.5rem;
+  padding: 3.5rem;
 }
 
 .text-justify {
@@ -548,6 +548,7 @@ section {
 
 /* Contact Me */
 .contact {
+  min-height: 92.99vh;
   background-image: url("../images/hero-section-background.png");
 }
 
@@ -557,7 +558,7 @@ section {
   border-radius: 1.5rem;
   padding: 1.5rem;
   width: 50%;
-  max-width: 600px;
+  max-width: 850px;
   min-width: 0;
 }
 
@@ -620,7 +621,7 @@ section {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem !important;
   width: 50%;
-  max-width: 600px;
+  max-width: 850px;
   align-content: center;
 }
 
@@ -680,9 +681,6 @@ section {
 
 /* Media Query */
 @media (max-width: 1399px) and (min-width: 1200px) {
-  .navbar {
-    border: 1px solid rgb(51, 255, 0);
-  }
   .about-description {
     max-width: 65%;
   }
@@ -727,6 +725,32 @@ section {
 
   #experience .badge-container {
     width: 100% !important;
+  }
+
+  .contact-section-body {
+    flex-direction: column;
+    padding: 1.25rem !important;
+  }
+
+  .contact-details {
+    width: auto;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+
+  .contact-intro {
+    flex: 0 0 100%;
+  }
+
+  .contact-item {
+    flex: 1 0 auto;
+    min-width: 0;
+  }
+
+  .contact-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.5rem !important;
   }
 }
 
@@ -850,6 +874,11 @@ section {
   .project-card {
     min-width: 85%;
   }
+
+  .contact-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
 }
 
 @media (max-width: 600.99px) {
@@ -920,6 +949,49 @@ section {
     letter-spacing: 0.05em;
     margin: auto 0 1rem;
   }
+
+  .contact-section-body {
+    flex-direction: column;
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+
+  .contact-details {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .contact-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-item {
+    padding: 0.85rem;
+  }
+
+  .contact-value {
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-actions {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem !important;
+  }
+
+  .contact-actions .contact-btn {
+    min-height: 48px;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -986,6 +1058,54 @@ section {
   .profile-value {
     font-size: 0.75rem;
   }
+
+  .contact-section-body {
+    gap: 1.25rem !important;
+    padding: 1rem !important;
+  }
+
+  .contact-details {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    align-items: stretch;
+  }
+
+  .contact-intro {
+    font-size: 0.9rem;
+  }
+
+  .contact-item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-label {
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    font-size: 0.85rem;
+  }
+
+  .copy-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+    gap: 0.65rem !important;
+  }
+
+  .contact-actions .contact-btn {
+    width: 100%;
+    min-height: 46px;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1019,6 +1139,58 @@ section {
 
   .skill-card {
     padding: 0.6rem;
+  }
+
+  .contact-section-body {
+    padding: 0.75rem !important;
+    gap: 1rem !important;
+  }
+
+  .contact-details {
+    padding: 0.75rem;
+    border-radius: 0.85rem;
+  }
+
+  .contact-intro {
+    font-size: 0.85rem;
+  }
+
+  .contact-item {
+    padding: 0.65rem;
+    border-radius: 0.6rem;
+  }
+
+  .contact-label {
+    font-size: 0.85rem;
+  }
+
+  .contact-value {
+    gap: 0.35rem;
+  }
+
+  .contact-link {
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+
+  .copy-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact-actions {
+    gap: 0.5rem !important;
+  }
+
+  .contact-actions .contact-btn {
+    min-height: 44px;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.82rem;
+    border-radius: 0.6rem;
+  }
+
+  .contact-actions .contact-btn .contact-icon {
+    margin-right: 0.4rem !important;
   }
 }
 
