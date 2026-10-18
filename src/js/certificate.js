@@ -1,4 +1,5 @@
-let certificates = [
+// Certificates Data
+const certificates = [
   {
     image: "src/assets/images/portfolio/certificate/JSEssential1.png",
     name: "JavaScript Essentials 1",
@@ -67,81 +68,128 @@ let certificates = [
 function renderCertificate() {
   const container = document.getElementById("certificate");
 
-  const sortedCertificates = [...certificates].sort(
-    (a, b) => new Date(b.date) - new Date(a.date),
+  if (!container) return;
+
+  container.replaceChildren();
+
+  // Display an empty state when no certificates are available
+  if (certificates.length === 0) {
+    container.innerHTML = ` <div class="card empty-certificate">
+      <img
+        src="src/assets/images/portfolio/No-Image.png"
+        class="card-img-top"
+        alt="No Certicate Image"
+      />
+
+      <div class="card-body d-flex flex-column">
+        <div>
+          <h5 class="card-title fw-semibold fs-5">No Certificate to Display</h5>
+          <p class="card-subtitle fs-6 text-justify mt-3">
+            This section will display earned certifications and credentials.
+            Future entries will reflect verified skills and professional
+            development milestones.
+          </p>
+          <p class="card-text fs-6 text-justify mt-2">
+            Additional certifications will be added as they are issued.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <div class="badge-container mt-5">
+            <span class="badge bg-secondary">N/A</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-body-secondary">Issued: —</div>
+    </div>`;
+    return;
+  }
+
+  // Sort certificates by issue date, newest first.
+  const sortedCertificates = [...certificates].sort((a, b) =>
+    b.date.localeCompare(a.date),
   );
 
   sortedCertificates.forEach((cert) => {
+    // Format the date
     const date = formatMonthYear(cert.date);
 
-    let skillList = renderBadges(cert.skill);
+    // Create skill badge elements
+    const skillList = renderBadges(cert.skill);
 
-    //Card Wrapper
-    const card = document.createElement("div");
-    card.classList.add(
+    // Certificate card
+    const card = createElement("div", [
       "card",
       "certificate",
       "certificate-card",
       "d-flex",
       "flex-wrap",
       "w-50",
-    );
+    ]);
 
-    //Card Image
-    const imageContainer = document.createElement("div");
-    imageContainer.classList.add("certificate-image-container");
+    // Certificate image
+    const imageContainer = createElement("div", [
+      "certificate-image-container",
+    ]);
 
-    const img = document.createElement("img");
+    const img = createElement("img", [
+      "card-img-top",
+      "d-block",
+      "w-100",
+      "h-auto",
+    ]);
     img.src = cert.image;
     img.alt = cert.name;
     img.loading = "lazy";
-    img.classList.add("card-img-top", "d-block", "w-100", "h-auto");
 
-    //Card Body
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body", "d-flex", "flex-column");
+    // Certificate body
+    const cardBody = createElement("div", [
+      "card-body",
+      "d-flex",
+      "flex-column",
+    ]);
+    // Certificate details
+    const cardInfo = createElement("div", ["card-info-container"]);
 
-    //Card Upper part
-    const cardInfo = document.createElement("div");
-    cardInfo.classList.add("card-info-container");
-
-    const cardTitle = document.createElement("h5");
-    cardTitle.classList.add("card-title", "fw-semibold", "fs-5");
-    cardTitle.textContent = cert.name;
-
-    const cardText = document.createElement("p");
-    cardText.classList.add("card-text", "card-issuer");
-    cardText.textContent = cert.platform;
-
-    const cardDesc = document.createElement("p");
-    cardDesc.classList.add(
-      "card-text",
-      "card-description",
-      "fs-6",
-      "text-justify",
-      "mt-3",
+    const cardTitle = createElement(
+      "h5",
+      ["card-title", "fw-semibold", "fs-5"],
+      cert.name,
     );
-    cardDesc.textContent = cert.desc;
 
-    //Card Bottom part
-    const cardBottomContent = document.createElement("div");
-    cardBottomContent.classList.add("card-bottom-content", "mt-auto");
+    const cardText = createElement(
+      "p",
+      ["card-text", "card-issuer"],
+      cert.platform,
+    );
 
-    //Badge Container
-    const badgeContainer = document.createElement("div");
-    badgeContainer.classList.add(
+    const cardDesc = createElement(
+      "p",
+      ["card-text", "card-description", "fs-6", "text-justify", "mt-3"],
+      cert.desc,
+    );
+
+    // Certificate skill badges
+    const cardBottomContent = createElement("div", [
+      "card-bottom-content",
+      "mt-auto",
+    ]);
+
+    const badgeContainer = createElement("div", [
       "badge-container",
       "d-flex",
       "flex-wrap",
       "gap-1",
       "mt-5",
+    ]);
+
+    // Certificate issued date
+    const cardFooter = createElement(
+      "div",
+      ["card-footer", "text-body-secondary"],
+      `Date Issued: ${date}`,
     );
 
-    //Card Footer
-    const cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer", "text-body-secondary");
-    cardFooter.textContent = `Date Issued: ${date}`;
-
+    // Assemble the certificate card
     badgeContainer.appendChild(skillList);
     cardBottomContent.appendChild(badgeContainer);
     cardInfo.append(cardTitle, cardText, cardDesc);
@@ -152,33 +200,4 @@ function renderCertificate() {
   });
 }
 
-if (certificates && certificates.length > 0) {
-  renderCertificate();
-} else {
-  const container = document.getElementById("certificate");
-
-  container.innerHTML = `
-    <div class="card empty-certificate">
-    <img src="src/assets/images/portfolio/No-Image.png" 
-        class="card-img-top" alt="No Certicate Image" />
-
-    <div class="card-body d-flex flex-column">
-        <div>
-        <h5 class="card-title fw-semibold fs-5">No Certificate to Display</h5>
-        <p class="card-subtitle fs-6 text-justify mt-3">
-            This section will display earned certifications and credentials. Future entries will reflect verified skills and professional development milestones.
-        </p>
-        <p class="card-text fs-6 text-justify mt-2">
-            Additional certifications will be added as they are issued.
-        </p>
-
-        </div>
-        <div class="mt-auto">
-        <div class="badge-container mt-5">
-            <span class="badge bg-secondary">N/A</span>
-        </div>
-        </div>
-    </div>
-    <div class="card-footer text-body-secondary">Issued: —</div>
-    </div>`;
-}
+renderCertificate();

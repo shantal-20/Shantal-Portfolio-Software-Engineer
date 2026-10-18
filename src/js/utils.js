@@ -1,3 +1,4 @@
+//Formats a YYYY-MM value into human-readable month and year (e.g., October 2026)
 function formatMonthYear(value) {
   const [year, month] = value.split("-");
   return new Date(year, month - 1).toLocaleString("en-US", {
@@ -6,6 +7,7 @@ function formatMonthYear(value) {
   });
 }
 
+//Creates and returns a temporary container (document fragment) containing badge elements
 function renderBadges(items) {
   const container = document.createDocumentFragment();
 
@@ -19,6 +21,7 @@ function renderBadges(items) {
   return container;
 }
 
+//Creates and returns a temporary container (document fragment) containing list items
 function renderLists(lists) {
   const container = document.createDocumentFragment();
   lists.forEach((list) => {
@@ -28,4 +31,13 @@ function renderLists(lists) {
     container.appendChild(li);
   });
   return container;
+}
+
+//Creates and returns an HTML element with specified classes and optional text
+function createElement(tag, classes, text = "") {
+  const element = document.createElement(tag);
+  element.classList.add(...classes);
+  element.textContent = text;
+
+  return element;
 }
