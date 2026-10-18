@@ -739,8 +739,12 @@ section:last-child {
   z-index: 1000;
 }
 
+.back-to-top i {
+  -webkit-text-stroke: 0.8px currentColor;
+}
+
 .back-to-top:hover {
-  background-color: #fff;
+  background-color: transparent;
   color: var(--primary-blue);
   transform: translateY(-5px);
 }
