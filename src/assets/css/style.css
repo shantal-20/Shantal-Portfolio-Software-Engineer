@@ -22,7 +22,6 @@
   --white-hover: #ffffff;
 
   /* Navbar Colors */
-  --navbar-bg: #ffffff;
   --navbar-text: #333333;
   --navbar-brand: #222222;
   --navbar-shadow: rgba(0, 0, 0, 0.08);
@@ -31,14 +30,29 @@
   --text-primary: #111827;
   --text-secondary: #64748b;
   --text-dark: #3b3b3b;
+  --text-white: #ffffff;
 
   /* Background Colors */
   --background-light: #f8f9fa;
   --background-white: #ffffff;
+  --header-footer-background: #111827;
 
   /* Border and Shadow */
   --border-light: #e5e7eb;
   --shadow-blue: rgba(54, 132, 253, 0.15);
+}
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 * {
@@ -57,13 +71,18 @@
 }
 
 section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   scroll-margin-top: 65px;
+}
+
+section:last-child {
+  max-height: 50vh !important;
+  min-width: 80vw !important;
 }
 
 /* Navbar */
 .navbar {
-  background-color: var(--navbar-bg);
+  background-color: var(--header-footer-background);
   box-shadow: 0 2px 10px var(--navbar-shadow);
   min-height: 65px;
 }
@@ -77,7 +96,7 @@ section {
 }
 
 .navbar .nav-link {
-  color: var(--navbar-text);
+  color: var(--text-white);
   transition: color 0.2s ease;
 }
 
@@ -184,7 +203,7 @@ section {
 }
 
 .social-links:hover i {
-  color: var(--white-hover);
+  color: var(--text-white);
 }
 
 .hero-button-container .btn {
@@ -612,7 +631,7 @@ section {
 
 .copy-btn:hover {
   background: var(--primary-blue);
-  color: white;
+  color: var(--text-white);
   border-color: var(--primary-blue);
 }
 
@@ -651,23 +670,6 @@ section {
   flex-shrink: 0;
 }
 
-/* Global */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-}
-
-section {
-  scroll-margin-top: 65px;
-}
-
 .about-description,
 .profile-card,
 .profile-details,
@@ -677,6 +679,70 @@ section {
 
 .profile-value {
   overflow-wrap: anywhere;
+}
+
+/* Footer */
+.footer {
+  background-color: #111827;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  padding: 0 !important;
+}
+
+.footer-brand-name {
+  color: var(--text-white);
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-family: "Luckiest Guy";
+}
+
+.footer-navigation .nav-link,
+.footer-social-link {
+  color: var(--text-white);
+}
+
+.footer-navigation .nav-link.active,
+.footer-social-link:hover {
+  color: var(--primary-blue);
+}
+
+.footer-divider {
+  border-top: 1px solid var(--white-hover);
+  width: 50vw;
+  height: 0;
+  margin: 1.5rem 0;
+}
+
+.footer-copyright {
+  color: var(--text-white);
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-blue);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #fff;
+  color: var(--primary-blue);
+  transform: translateY(-5px);
 }
 
 /* Media Query */
@@ -879,6 +945,56 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
   }
+
+  .footer {
+    padding-top: 2rem !important;
+  }
+
+  .footer-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer-brand-name {
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .footer-navigation {
+    padding: 0 1rem;
+  }
+
+  .footer-navigation .navbar-nav {
+    gap: 0.5rem 1rem !important;
+  }
+
+  .footer-navigation .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .footer-socials {
+    gap: 1.25rem !important;
+  }
+
+  .footer-social-link i {
+    font-size: 1.5rem !important;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .footer-divider {
+    width: 80vw;
+    margin: 1rem auto;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
 }
 
 @media (max-width: 600.99px) {
@@ -1012,7 +1128,7 @@ section {
   }
 
   .hero-button-container .btn {
-    width: 100%;
+    width: 75%;
     flex: auto;
   }
 
@@ -1105,6 +1221,36 @@ section {
     min-height: 46px;
     padding: 0.7rem 0.85rem;
     font-size: 0.9rem;
+  }
+
+  .footer-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-brand-name {
+    font-size: 1.4rem;
+  }
+
+  .footer-navigation .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-navigation .navbar-nav {
+    column-gap: 0.75rem !important;
+    row-gap: 0.25rem !important;
+  }
+
+  .footer-socials {
+    gap: 1rem !important;
+  }
+
+  .footer-divider {
+    width: 85vw;
+  }
+
+  .footer-copyright {
+    font-size: 0.7rem;
   }
 }
 
